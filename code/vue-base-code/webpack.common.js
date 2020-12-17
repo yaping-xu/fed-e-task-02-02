@@ -1,6 +1,8 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+
 
 module.exports = {
   mode: 'none',
@@ -57,8 +59,10 @@ module.exports = {
     // 将你定义过的其它规则复制并应用到 .vue 文件里相应语言的块
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './public/index.html'),
-      url: __dirname
+      template: './public/index.html'
+    }),
+    new webpack.DefinePlugin({
+    	BASE_URL: __dirname // 可以传入一段代码片段
     })
   ]
 }
