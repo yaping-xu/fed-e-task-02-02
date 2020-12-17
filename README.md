@@ -6,11 +6,13 @@
 - 输出最后的打包代码
 ### Loader 和 Plugin 有哪些不同？请描述一下开发 Loader 和 Plugin 的思路。
 1. Loader：是资源模块加载器，通过加载不同的loader就可以实现加载任何类型的资源
+
 开发思路:
   - Loader是一种管道的概念，对于同一个资源可以依次使用多个Loader进行处理,
   - Loader中代码实现内部是一个函数，可以通过参数获得传入source
   - 在函数内部对source进行处理，最后返回处理后的JavaScript代码
 2. Plugin：解决了除了资源加载以外的其他自动化工作，例如清除dist目录等
+
 开发思路:
   - Plugin 通过钩子机制实现
   - Webpack要求Plugin必须是一个函数，或者是一个包含apply方法的对象
