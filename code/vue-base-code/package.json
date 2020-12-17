@@ -9,9 +9,24 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.5",
+    "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^5.0.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "less": "^3.13.0",
+    "less-loader": "^7.1.0",
+    "url-loader": "^4.1.1",
+    "vue-style-loader": "^4.1.2",
+    "webpack": "4.44.2",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "2.9.7"
   },
   "eslintConfig": {
     "root": true,
