@@ -12,7 +12,16 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  created () {
+    this.init();
+  },
+  methods: {
+    init () {
+      const foo = '555'
+      console.log(foo);
+    }
+  },
 }
 </script>
 

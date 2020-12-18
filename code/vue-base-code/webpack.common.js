@@ -1,13 +1,10 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
 
 
 module.exports = {
-  mode: 'none',
   entry: './src/main.js',
-  publicPath: './',
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'dist'),
@@ -32,23 +29,25 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
-          'css-loader',
+          'style-loader',
+          'css-loader'
         ]
       },
       {
         test: /\.less$/,
         use: [
-          'vue-style-loader',
+          'style-loader',
           'css-loader',
           'less-loader'
         ]
       },
       {
-        test: /\.png$/,
+        test: /\.(png|jpe?g|gif)$/,
         use: {
           loader: 'url-loader',
           options: {
+            esModule: false, // file-loader 在新版本中esModule默认为true,因此要手动设置为false
+            name: '[name].[ext]',
             limit: 10 * 1024,
           }
         }
@@ -56,13 +55,11 @@ module.exports = {
     ],
   },
   plugins: [
-    // 将你定义过的其它规则复制并应用到 .vue 文件里相应语言的块
+    // 将定义过的其它规则复制并应用到 .vue 文件里相应语言的块
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
+      title: 'Vue App',
       template: './public/index.html'
     }),
-    new webpack.DefinePlugin({
-    	BASE_URL: __dirname // 可以传入一段代码片段
-    })
   ]
 }
