@@ -14,14 +14,14 @@ export default {
     HelloWorld
   },
   created () {
-    this.init();
+    this.init()
   },
   methods: {
     init () {
-      const foo = '555'
-      console.log(foo);
+      const a = '555'
+      console.log(a)
     }
-  },
+  }
 }
 </script>
 
