@@ -20,3 +20,6 @@
 ## 编程题
 - [使用 Webpack 实现 Vue 项目打包任务]('./code/vue-base-code')
 - [编程题的文档说明](./code/说明文档.md)
+## 笔记链接
+- [模块化](https://juejin.cn/post/6900924314049380365)
+- [webpack](https://juejin.cn/post/6906400832703430669)
